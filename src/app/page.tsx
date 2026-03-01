@@ -37,8 +37,8 @@ export default function Home() {
             M2COSMOS
           </a>
           <div className="flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
-            <a href="#" className="hover:text-accent transition">Articles</a>
-            <a href="#" className="hover:text-accent transition">Categories</a>
+            <a href="/" className="hover:text-accent transition underline decoration-accent/30 underline-offset-4">Articles</a>
+            <a href="/about" className="hover:text-accent transition">About</a>
             <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition">
               🔍
             </button>
@@ -105,6 +105,29 @@ export default function Home() {
             </p>
           </section>
         </article>
+
+        {/* More Articles Section */}
+        <section className="mt-20 border-t border-border-subtle pt-16">
+          <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-10">Recent Insight</h2>
+          <div className="grid gap-12">
+            {/* Mock Article 1 */}
+            <div className="group cursor-not-allowed">
+              <span className="text-xs font-medium text-accent/60 mb-2 block uppercase tracking-wider">Coming Soon</span>
+              <h3 className="text-2xl font-bold group-hover:text-accent transition-colors mb-2">
+                Agentic Workflow: 왜 단순 챗봇이 아닌 시스템이 중요한가
+              </h3>
+              <p className="text-slate-500 text-sm">LLM을 엔진으로 사용하는 자율 에이전트들이 만들어낼 새로운 워크플로우를 탐구합니다.</p>
+            </div>
+            {/* Mock Article 2 */}
+            <div className="group cursor-not-allowed">
+              <span className="text-xs font-medium text-accent/60 mb-2 block uppercase tracking-wider">Coming Soon</span>
+              <h3 className="text-2xl font-bold group-hover:text-accent transition-colors mb-2">
+                TypeScript와 AI 코딩: 타입 시스템이 에이전트에게 주는 영향
+              </h3>
+              <p className="text-slate-500 text-sm">견고한 타입 시스템이 AI 코딩 어시스턴트의 정확도를 어떻게 비약적으로 높여주는지 분석합니다.</p>
+            </div>
+          </div>
+        </section>
 
         {/* Bottom Ad - Responsive Unit */}
         <AdSense
