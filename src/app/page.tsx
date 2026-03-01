@@ -25,29 +25,14 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col transition-colors duration-300">
+    <div className="transition-colors duration-300">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-border-subtle">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" className="text-xl font-black tracking-tighter text-accent uppercase">
-            M2COSMOS
-          </a>
-          <div className="flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
-            <a href="/" className="hover:text-accent transition underline decoration-accent/30 underline-offset-4">Articles</a>
-            <a href="/about" className="hover:text-accent transition">About</a>
-            <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition">
-              🔍
-            </button>
-          </div>
-        </div>
-      </nav>
 
       {/* Main Content */}
-      <main className="flex-grow max-w-4xl mx-auto w-full px-6 py-12 md:py-16">
+      <div className="max-w-4xl mx-auto w-full px-6 py-12 md:py-16">
         {/* Top Ad - Optimized for Desktop/Mobile Viewport */}
         <AdSense
           adSlot="1234567890"
@@ -135,22 +120,7 @@ export default function Home() {
           minHeight="250px"
           className="mt-16"
         />
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-slate-50 dark:bg-slate-950 border-t border-border-subtle py-12 px-6">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <p className="text-sm font-bold tracking-widest uppercase text-slate-400">M2COSMOS</p>
-            <p className="text-xs text-slate-500 mt-1">© 2026 Built for the Infinite Journey.</p>
-          </div>
-          <div className="flex gap-6 text-xs font-semibold text-slate-500 tracking-widest uppercase">
-            <a href="/privacy" className="hover:text-accent transition">Privacy</a>
-            <a href="/about" className="hover:text-accent transition">About</a>
-            <a href="/contact" className="hover:text-accent transition">Contact</a>
-          </div>
-        </div>
-      </footer>
+      </div>
     </div>
   );
 }
