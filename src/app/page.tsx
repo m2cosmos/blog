@@ -122,9 +122,9 @@ export default function Home() {
             <p className="text-xs text-slate-500 mt-1">© 2026 Built for the Infinite Journey.</p>
           </div>
           <div className="flex gap-6 text-xs font-semibold text-slate-500 tracking-widest uppercase">
-            <a href="#" className="hover:text-accent transition">Privacy</a>
-            <a href="#" className="hover:text-accent transition">Terms</a>
-            <a href="#" className="hover:text-accent transition">Contact</a>
+            <a href="/privacy" className="hover:text-accent transition">Privacy</a>
+            <a href="/about" className="hover:text-accent transition">About</a>
+            <a href="/contact" className="hover:text-accent transition">Contact</a>
           </div>
         </div>
       </footer>
