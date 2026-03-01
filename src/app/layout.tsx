@@ -54,6 +54,9 @@ export const metadata: Metadata = {
   }
 };
 
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,9 +72,13 @@ export default function RootLayout({
         ></script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${notoSansKR.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoSansKR.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
