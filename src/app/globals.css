@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  /* Radiant Reader - Light Mode */
+  --background: #f8fafc;
+  /* Soft Gray for eye comfort */
+  --foreground: #0f172a;
+  /* Deep Slate for contrast */
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --accent-color: #6366f1;
+  /* Indigo accent */
+
+  /* Typography Tokens */
+  --font-base-size: 18px;
+  --font-line-height: 1.75;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card-bg);
+  --color-border-subtle: var(--border-color);
+  --color-accent: var(--accent-color);
+  --font-sans: var(--font-noto-sans-kr), var(--font-geist-sans), ui-sans-serif, system-ui;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Radiant Reader - Dark Mode */
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: var(--font-base-size);
+  line-height: var(--font-line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--foreground);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
