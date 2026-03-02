@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import AdSense from "@/components/AdSense";
 import { Metadata } from "next";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface PageProps {
     params: {
@@ -78,9 +80,11 @@ export default async function ArticlePage({ params }: PageProps) {
 
             {/* Intro */}
             <div className="prose prose-slate dark:prose-invert max-w-none mb-16">
-                <p className="text-2xl font-serif text-slate-600 dark:text-slate-300 leading-relaxed italic border-l-4 border-accent pl-8 py-2">
-                    {article.content.intro}
-                </p>
+                <div className="text-2xl font-serif text-slate-600 dark:text-slate-300 leading-relaxed italic border-l-4 border-accent pl-8 py-2">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {article.content.intro}
+                    </ReactMarkdown>
+                </div>
             </div>
 
             {/* Top Ad */}
@@ -93,9 +97,11 @@ export default async function ArticlePage({ params }: PageProps) {
                         <h2 className="text-3xl font-black tracking-tight mb-8 text-slate-900 dark:text-slate-100">
                             {section.title}
                         </h2>
-                        <p className="text-xl leading-relaxed text-slate-700 dark:text-slate-300 whitespace-pre-wrap">
-                            {section.body}
-                        </p>
+                        <div className="text-xl leading-relaxed text-slate-700 dark:text-slate-300">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {section.body}
+                            </ReactMarkdown>
+                        </div>
                         {idx === 0 && (
                             <AdSense adSlot="2345678901" adFormat="rectangle" minHeight="280px" className="my-16" />
                         )}
@@ -106,9 +112,11 @@ export default async function ArticlePage({ params }: PageProps) {
             {/* Conclusion */}
             <div className="mt-20 p-10 md:p-16 rounded-[3rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
                 <h3 className="text-2xl font-bold mb-6">Conclusion</h3>
-                <p className="text-xl leading-relaxed text-slate-700 dark:text-slate-300 mb-0">
-                    {article.content.conclusion}
-                </p>
+                <div className="text-xl leading-relaxed text-slate-700 dark:text-slate-300 mb-0">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {article.content.conclusion}
+                    </ReactMarkdown>
+                </div>
             </div>
 
             {/* Bottom Ad */}
@@ -125,9 +133,14 @@ export default async function ArticlePage({ params }: PageProps) {
                             <h4 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-accent transition">
                                 Q: {item.question}
                             </h4>
-                            <p className="text-lg text-slate-600 dark:text-slate-400">
-                                A: {item.answer}
-                            </p>
+                            <div className="text-lg text-slate-600 dark:text-slate-400">
+                                <strong>A: </strong>
+                                <span className="inline">
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                        {item.answer}
+                                    </ReactMarkdown>
+                                </span>
+                            </div>
                         </div>
                     ))}
                 </div>
