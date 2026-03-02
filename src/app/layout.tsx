@@ -18,8 +18,12 @@ const notoSansKR = Noto_Sans_KR({
   weight: ["100", "300", "400", "500", "700", "900"],
 });
 
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Script from "next/script";
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://m2cosmos.com'),
+  metadataBase: new URL('https://blog.m2cosmos.com'),
   title: {
     default: "M2COSMOS Blog | Radiant Reader",
     template: "%s | M2COSMOS Blog"
@@ -30,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "M2COSMOS Blog | Radiant Reader",
     description: "가독성과 수익에 최적화된 M2COSMOS 공식 블로그",
-    url: 'https://m2cosmos.com',
+    url: 'https://blog.m2cosmos.com',
     siteName: 'M2COSMOS',
     images: [
       {
@@ -57,9 +61,6 @@ export const metadata: Metadata = {
   },
 };
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,6 +78,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${notoSansKR.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-X1B2VSSGY8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-X1B2VSSGY8');
+          `}
+        </Script>
+
         <Header />
         <main className="flex-grow">
           {children}
