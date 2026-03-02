@@ -92,7 +92,7 @@ export default function AdminListPage() {
                             {article.isDynamic ? (
                                 <>
                                     <Link
-                                        href={`/admin/edit/${article.slug}`}
+                                        href={`/admin/edit/?slug=${article.slug}`}
                                         className="flex-grow py-3 rounded-xl bg-slate-50 dark:bg-slate-800 text-center text-sm font-bold hover:bg-accent/10 hover:text-accent transition"
                                     >
                                         수정 📝

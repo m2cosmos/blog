@@ -1,21 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { storage } from "@/lib/storage";
 import { DynamicArticle } from "@/types/cms";
 
-interface PageProps {
-    params: Promise<{
-        slug: string;
-    }>;
-}
-
-import { use } from "react";
-
-export default function EditArticlePage({ params }: PageProps) {
+function EditArticleForm() {
     const router = useRouter();
-    const { slug } = use(params);
+    const searchParams = useSearchParams();
+    const slug = searchParams.get("slug");
+
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [excerpt, setExcerpt] = useState("");
@@ -27,6 +21,11 @@ export default function EditArticlePage({ params }: PageProps) {
     useEffect(() => {
         if (!storage.isAdmin()) {
             router.push("/admin/login");
+            return;
+        }
+
+        if (!slug) {
+            router.push("/admin");
             return;
         }
 
@@ -48,6 +47,7 @@ export default function EditArticlePage({ params }: PageProps) {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        if (!slug) return;
 
         const updatedArticle: DynamicArticle = {
             slug,
@@ -76,7 +76,7 @@ export default function EditArticlePage({ params }: PageProps) {
         router.push("/admin");
     };
 
-    if (isLoading) return <div className="p-20 text-center font-bold">Loading... 🧠</div>;
+    if (isLoading) return <div className="p-20 text-center font-bold">Loading Editor... 🧠</div>;
 
     return (
         <div className="max-w-4xl mx-auto px-6 py-12 md:py-20 animate-in fade-in duration-700">
@@ -155,5 +155,13 @@ export default function EditArticlePage({ params }: PageProps) {
                 </div>
             </form>
         </div>
+    );
+}
+
+export default function EditArticlePage() {
+    return (
+        <Suspense fallback={<div className="p-20 text-center font-bold">Initializing Editor... 🧠</div>}>
+            <EditArticleForm />
+        </Suspense>
     );
 }
