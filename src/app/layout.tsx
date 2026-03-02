@@ -51,7 +51,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  }
+  },
+  other: {
+    "google-adsense-account": "ca-pub-8306360631355158",
+  },
 };
 
 import Header from "@/components/Header";
@@ -67,7 +70,7 @@ export default function RootLayout({
       <head>
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8306360631355158"
           crossOrigin="anonymous"
         ></script>
       </head>
