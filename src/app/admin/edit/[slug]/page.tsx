@@ -5,11 +5,17 @@ import { useRouter, useParams } from "next/navigation";
 import { storage } from "@/lib/storage";
 import { DynamicArticle } from "@/types/cms";
 
-export default function EditArticlePage() {
-    const router = useRouter();
-    const params = useParams();
-    const slug = params.slug as string;
+interface PageProps {
+    params: Promise<{
+        slug: string;
+    }>;
+}
 
+import { use } from "react";
+
+export default function EditArticlePage({ params }: PageProps) {
+    const router = useRouter();
+    const { slug } = use(params);
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [excerpt, setExcerpt] = useState("");

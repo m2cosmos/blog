@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import ArticleContent from "@/components/ArticleContent";
 
 interface PageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export async function generateStaticParams() {
