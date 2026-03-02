@@ -69,14 +69,14 @@ export default function Header() {
             </div>
 
             {/* Mobile Menu Fullscreen Overlay */}
-            <div className={`fixed inset-0 bg-white/98 dark:bg-slate-900/98 backdrop-blur-xl z-40 transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-10'
+            <div className={`fixed inset-0 w-full h-[100dvh] bg-white/98 dark:bg-slate-900/98 backdrop-blur-xl z-40 transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 overflow-y-auto px-6 py-20 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-10'
                 }`}>
                 {NAV_ITEMS.map((item, idx) => (
                     <Link
                         key={item.href}
                         href={item.href}
                         style={{ transitionDelay: `${idx * 100}ms` }}
-                        className={`text-3xl font-black tracking-tighter uppercase transition-all duration-300 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                        className={`text-3xl font-black tracking-tighter uppercase transition-all duration-300 text-center w-full ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                             } ${pathname === item.href ? 'text-accent' : 'text-slate-400 dark:text-slate-600 hover:text-accent'
                             }`}
                     >
