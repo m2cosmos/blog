@@ -9,6 +9,7 @@ export default function Footer() {
                     <p className="text-xs text-slate-500 mt-1">© 2026 Built for the Infinite Journey.</p>
                 </div>
                 <div className="flex gap-6 text-xs font-semibold text-slate-500 tracking-widest uppercase">
+                    <Link href="/terms" className="hover:text-accent transition">Terms</Link>
                     <Link href="/privacy" className="hover:text-accent transition">Privacy</Link>
                     <Link href="/about" className="hover:text-accent transition">About</Link>
                     <Link href="/contact" className="hover:text-accent transition">Contact</Link>
