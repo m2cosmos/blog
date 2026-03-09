@@ -88,7 +88,7 @@ export default function AdminListPage() {
                         </div>
 
                         {/* Actions */}
-                        <div className="px-8 pb-8 pt-0 flex items-center gap-3">
+                        <div className="relative z-10 px-8 pb-8 pt-0 flex items-center gap-3">
                             {article.isDynamic ? (
                                 <>
                                     <Link

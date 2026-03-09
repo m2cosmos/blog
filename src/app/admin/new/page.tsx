@@ -28,7 +28,7 @@ export default function NewArticlePage() {
         const getRandomEmojis = (count: number) =>
             Array.from({ length: count }, () => emojiList[Math.floor(Math.random() * emojiList.length)]).join(" ");
 
-        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || `article-${Date.now()}`;
 
         const newArticle: DynamicArticle = {
             slug,
