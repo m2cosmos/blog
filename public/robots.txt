@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://m2cosmos.com
+Host: https://blog.m2cosmos.com
 
 # Sitemaps
-Sitemap: https://m2cosmos.com/sitemap.xml
-Sitemap: https://m2cosmos.com/server-sitemap.xml
+Sitemap: https://blog.m2cosmos.com/sitemap.xml
+Sitemap: https://blog.m2cosmos.com/server-sitemap.xml

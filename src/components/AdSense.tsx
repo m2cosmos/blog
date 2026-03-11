@@ -39,7 +39,7 @@ export default function AdSense({
             <ins
                 className="adsbygoogle"
                 style={{ display: "block", width: "100%", height: "100%" }}
-                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" // 실제 클라이언트 ID로 교체 필요
+                data-ad-client="ca-pub-8306360631355158" // 실제 클라이언트 ID로 교체 완료
                 data-ad-slot={adSlot}
                 data-ad-format={adFormat}
                 data-full-width-responsive="true"
