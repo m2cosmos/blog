@@ -30,7 +30,7 @@ export const articles: Article[] = [
         author: "M2COSMOS Nova",
         readTime: "25 min read",
         excerpt: "어제 발표된 구글의 'Gemini Embedding 2'는 단순한 기술 업데이트가 아닙니다. 기업들이 AI 도입 시 지불해야 했던 불필요한 '기술 통행세'와 '운영 거품'을 터뜨리는 강력한 선전포고입니다. 비즈니스 리더의 관점에서 AI 마진율을 바꾸는 3가지 핵심 혁신을 파헤칩니다.",
-        image: "/images/gemini_embedding_2_strategy_v1.png",
+        image: "/images/gemini_embedding_2_cost_burst_cover.png",
         content: {
             intro: "\"AI가 좋은 건 알겠는데, 막상 우리 회사 데이터로 시스템을 만들려니 비용이 감당이 안 됩니다.\" 수많은 기업의 리더들이 PoC(개념 증명) 단계에서 공통적으로 토로하는 고민입니다. 화려한 챗봇 뒤에 숨겨진 막대한 API 호출 비용과 인프라 유지비는 기업의 AI 전환을 가로막는 가장 큰 '보이지 않는 벽'이었습니다. 하지만 2026년 3월 10일, 구글이 발표한 'Gemini Embedding 2' 모델은 이 판도를 완전히 뒤집었습니다. 기술적 수사(Rhetoric)를 걷어내고, 철저히 '비즈니스 운영 마진'과 'ROI(투자 대비 수익)' 관점에서 왜 이 모델이 엔터프라이즈 AI 시장의 진정한 게임 체인저인지 심층 분석해 보겠습니다.",
             sections: [
@@ -76,7 +76,7 @@ export const articles: Article[] = [
         author: "M2COSMOS Nova",
         readTime: "16 min read",
         excerpt: "단순한 모니터링을 넘어 스스로 장애를 예측하고 자원을 최적화하는 '자율 주행 클라우드'. AI 에이전트가 바꾸는 인프라 관리의 패러다임 변화를 심층 탐구합니다.",
-        image: "/images/ai_cloud_infrastructure_v1_1772385312000.png",
+        image: "/images/ai_agents_cloud_infra_cover.png",
         content: {
             intro: "클라우드 컴퓨팅의 등장은 기업의 IT 환경을 혁신적으로 바꿨지만, 거대해진 인프라를 관리해야 하는 운영팀(Ops)의 고통은 오히려 깊어졌습니다. 수만 개의 마이크로서비스와 복잡한 네트워킹 속에서 발생하는 장애를 인간이 실시간으로 대응하는 것은 이제 물리적으로 불가능에 가까워졌습니다. 하지만 2026년, 인공지능은 단순히 경고를 보내는 도구가 아니라 스스로 판단하고 조치하는 '자율형 에이전트'로 진화하며 'No-Ops'라는 불가능해 보였던 꿈을 현실로 앞당기고 있습니다. 3,000자 이상의 심층 분석을 통해 AI 에이전트가 클라우드 인프라를 관리하는 매커니즘과 그 미래를 파헤쳐 보겠습니다.",
             sections: [
@@ -118,7 +118,7 @@ export const articles: Article[] = [
         author: "M2COSMOS Nova",
         readTime: "15 min read",
         excerpt: "질문에 대답하는 AI의 시대가 저물고, 목표를 위해 스스로 도구를 쓰며 결과를 가져오는 '에이전틱 AI'의 시대가 열렸습니다. 2026년 AI 시장을 뒤흔드는 이 거대한 파동을 분석합니다.",
-        image: "/images/agentic_ai_vision_v1_1772385330000.png",
+        image: "/images/generative_to_agentic_ai_cover.png",
         content: {
             intro: "지난 몇 년간 우리는 인공지능이 글을 쓰고 그림을 그리며 질문에 답하는 '생성(Generation)'의 마법에 매료되었습니다. 하지만 단순한 텍스트 생성에는 한계가 있었습니다. AI는 우리에게 '방법'을 알려줄 수는 있었지만, 그 일을 대신 '처리'해주지는 못했기 때문입니다. 2026년, 우리는 이 한계를 극복하고 AI가 현실 세계의 과업을 직접 수행하는 '에이전틱 AI(Agentic AI)'의 시대로 진입했습니다. '그럴듯한 답변'을 내놓던 AI가 이제는 '실질적인 결과'를 배달하기 시작했습니다. 이번 글에서는 생성형 AI와 에이전틱 AI의 결정적인 차이와, 이 변화가 우리의 일상과 비즈니스를 어떻게 바꿀지 3,000자 이상의 심층 탐구로 살펴보겠습니다.",
             sections: [
