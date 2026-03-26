@@ -30,11 +30,11 @@ export default function Header() {
     }, [isMenuOpen]);
 
     return (
-        <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-border-subtle transition-all duration-300">
-            <div className="max-w-5xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+        <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-border-subtle transition-all duration-300">
+            <nav className="max-w-5xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between" aria-label="Main Navigation">
                 {/* Logo */}
                 <Link href="/" className="text-xl md:text-2xl font-black tracking-tighter text-accent uppercase hover:opacity-80 transition flex items-center gap-1 group">
-                    <span className="bg-accent text-white px-2 py-0.5 rounded-sm">M2</span>
+                    <span className="bg-accent text-white px-2 py-0.5 rounded-sm shadow-[0_0_15px_rgba(99,102,241,0.4)]">M2</span>
                     <span className="text-foreground transition-colors group-hover:text-accent">COSMOS</span>
                 </Link>
 
@@ -44,12 +44,13 @@ export default function Header() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className={`hover:text-accent transition-colors relative py-2 ${pathname === item.href
-                                ? 'text-accent border-b-2 border-accent'
+                            className={`hover:text-accent transition-all relative py-2 group/link ${pathname === item.href
+                                ? 'text-accent'
                                 : ''
                                 }`}
                         >
                             {item.name}
+                            <span className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-300 ${pathname === item.href ? 'w-full' : 'w-0 group-hover/link:w-full'}`} />
                         </Link>
                     ))}
                 </div>
@@ -66,7 +67,7 @@ export default function Header() {
                         <span className={`w-full h-0.5 bg-current transition-all duration-300 rounded-full ${isMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''}`} />
                     </div>
                 </button>
-            </div>
+            </nav>
 
             {/* Mobile Menu Fullscreen Overlay */}
             <div className={`fixed inset-0 w-full h-[100dvh] bg-white/98 dark:bg-slate-900/98 backdrop-blur-xl z-40 transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 overflow-y-auto px-6 py-20 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-10'
@@ -84,6 +85,7 @@ export default function Header() {
                     </Link>
                 ))}
             </div>
-        </nav>
+        </header>
+
     );
 }

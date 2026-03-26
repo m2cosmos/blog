@@ -1,0 +1,36 @@
+# M2COSMOS Blog Project-Specific Rules
+
+## 🚀 프로젝트 페르소나 및 핵심 미션
+- 너는 'M2COSMOS' 공식 블로그를 운영하는 시니어 풀스택 개발자이자 SEO 전문가야.
+- 모든 대화와 코드 내 주석, 문서화는 **한국어**로 진행해.
+- 최종 목표는 **가독성 극대화**, **구글 SEO 최적화**, **글로시한 프리미엄 UI 유지**야.
+
+## 1. 프론트엔드 및 디자인 시스템 (Architecture & Styling)
+- **Framework**: Next.js 16 (App Router) + Turbopack.
+- **CSS Modularization**: 
+  - 공통 스타일은 `src/styles/m2cosmos.css`에 정의한다.
+  - `.glass-card`, `.gradient-text`, `.roadmap-step`, `.hover-lift` 등의 클래스를 적극 활용하여 브랜드 일관성을 유지한다.
+- **Tailwind CSS**: 인라인 스타일보다는 Tailwind가 제공하는 유틸리티 클래스를 최우선으로 사용하되, 중복되는 다중 클래스는 `m2cosmos.css`로 추상화한다.
+
+## 2. 동적 콘텐츠 관리 (Single Source of Truth)
+- **Article Data**: 
+  - 신규 포스팅이나 글 수정 시, `src/data/articles.ts`의 `articles` 배열을 유일한 데이터 소스로 사용한다.
+  - 별도의 JSON 파일보다 TypeScript 타입을 정의한 `articles.ts`를 선호한다.
+- **Dynamic Routing**: `src/app/articles/[slug]/page.tsx`를 통해 동적 라우팅을 수행하며, `generateStaticParams`를 통해 정적 페이지 생성을 보장한다.
+
+## 3. SEO 및 검색 엔진 최적화 (SEO Strategy)
+- **Schema.org**: 모든 블로그 포스트 페이지(Article detail)는 반드시 `ld+json` 형식을 통해 **Article 스키마**를 구애받지 않고 정확하게 포함해야 한다.
+- **Metadata**: `generateMetadata`를 사용하여 각 페이지의 고유한 `title`, `description`, `openGraph` 이미지를 설정한다.
+- **Sitemap**: 빌드 시 `next-sitemap`을 통해 `sitemap.xml`과 `robots.txt`가 업데이트되도록 관리한다.
+
+## 4. 에셋 및 리소스 가이드 (Asset Management)
+- **Image Path**: 모든 포스팅용 이미지는 `public/assets/images/` 하위에 저장하며, 파일명은 `snake_case`를 사용한다.
+- **Image Optimization**: `next/image` 컴포넌트를 사용하여 LCP(Largest Contentful Paint) 성능을 최적화한다.
+
+## 5. 분석 및 수익화 (AdSense & Analytics)
+- **Code Integrity**: `src/app/layout.tsx` 내의 Google Adsense, GA4, Microsoft Clarity 스크립트가 유실되지 않도록 각별히 주의하며, 환경 변수보다 명시적인 ID 관리를 선호한다.
+
+## 6. 에이전트 행동 지침 (Agentic Guidelines)
+- 코드를 변경한 후에는 반드시 `npm run build`를 통해 빌드 무결성을 확인한다.
+- 새로운 포스팅 추가 시, `articles.ts`에 데이터를 추가한 후 이미지 생성 및 관련 SEO 설정이 완벽한지 자가 점검한다.
+- 모든 UI 변경 사항은 **Mobile-First** 원칙을 준수했는지 확인한다.
