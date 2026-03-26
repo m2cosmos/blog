@@ -13,26 +13,34 @@
 
   /* Roadmap/Step Indicator Styles */
   .roadmap-step {
-    @apply relative pl-8 border-l-2 border-accent-color/30 pb-8 last:pb-0;
+    @apply relative pl-8 border-l-2 border-accent/30 pb-8 last:pb-0;
   }
 
   .roadmap-step::before {
     content: "";
-    @apply absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-accent-color shadow-[0_0_10px_rgba(99,102,241,0.5)];
+    @apply absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-accent shadow-[0_0_10px_rgba(99,102,241,0.5)];
   }
 
   /* Premium Hover Effects */
   .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl;
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-2xl;
   }
 
   /* Minimalist Futuristic Link */
   .futuristic-link {
-    @apply relative overflow-hidden inline-block group;
+    @apply relative overflow-hidden inline-block;
   }
 
   .futuristic-link::after {
     content: "";
-    @apply absolute bottom-0 left-0 w-full h-0.5 bg-accent-color translate-x-[-101%] transition-transform duration-300 group-hover:translate-x-0;
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-accent translate-x-[-101%] transition-transform duration-300;
+  }
+
+  .futuristic-link:hover::after {
+    @apply translate-x-0;
   }
 }
