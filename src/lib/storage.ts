@@ -37,7 +37,7 @@ export const storage = {
 
     getAllArticles(): DynamicArticle[] {
         const dynamic = this.getDynamicArticles();
-        return [...dynamic, ...staticArticles];
+        return [...dynamic, ...staticArticles].sort((a, b) => b.date.localeCompare(a.date));
     },
 
     getArticleBySlug(slug: string): DynamicArticle | undefined {
